@@ -6,5 +6,6 @@ module com.example.gestiondestock {
 
 
     opens com.example.gestiondestock to javafx.fxml;
+    opens models to javafx.base;
     exports com.example.gestiondestock;
 }

@@ -45,7 +45,7 @@ public class AjouterProduitController {
         prods.setNom(nomR);
         prods.setPrix(Integer.parseInt(prixR));
         prods.setDescription(descR);
-        prods.setQuantite(quantR);
+        prods.setQuantite(Integer.parseInt(quantR));
 
         int status = Commandes.AjouterProduits(prods);
         Alert alert;

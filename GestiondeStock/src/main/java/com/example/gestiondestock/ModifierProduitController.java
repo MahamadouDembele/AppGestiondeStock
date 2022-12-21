@@ -27,7 +27,7 @@ public class ModifierProduitController {
         int id = Integer.parseInt(pid);
         Produits produits= Commandes.getProduits(id);
         nom.setText(produits.getNom());
-        prix.setText(produits.getPrix());
+        prix.setText(String.valueOf(produits.getPrix()));
         description.setText(produits.getDescription());
         quantite.setText(produits.getQuantite());
     }
@@ -44,7 +44,7 @@ public class ModifierProduitController {
         produits.setNom(pnom);
         produits.setPrix(Integer.parseInt(pprix));
         produits.setDescription(pdesc);
-        produits.setQuantite(pquant);
+        produits.setQuantite(Integer.parseInt(pquant));
         int status = Commandes.ModifierProduits(produits);
         Alert alert;
         if(status>0){

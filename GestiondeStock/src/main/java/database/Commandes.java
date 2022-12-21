@@ -34,11 +34,11 @@ public class Commandes {
             PreparedStatement stat;
             stat= con.prepareStatement(sql);
             stat.setString(1,produits.getNom());
-            stat.setString(2,produits.getPrix());
+            stat.setString(2, String.valueOf(produits.getPrix()));
             stat.setString(3,produits.getDescription());
             stat.setString(4,produits.getQuantite());
             prd=stat.executeUpdate();
-            con.close();
+//            con.close();
         }catch (Exception e){
             System.out.println("error: " + e.getMessage());
         }
@@ -52,12 +52,12 @@ public class Commandes {
             PreparedStatement stat;
             stat= con.prepareStatement(sql);
             stat.setString(1,produits.getNom());
-            stat.setInt(2, Integer.parseInt(produits.getPrix()));
+            stat.setInt(2, Integer.parseInt(String.valueOf(produits.getPrix())));
             stat.setString(3,produits.getDescription());
             stat.setInt(4, Integer.parseInt(produits.getQuantite()));
             stat.setInt(5,produits.getId());
             prdd= stat.executeUpdate();
-            con.close();
+//            con.close();
 
         }catch (Exception e){
             System.out.println("error: " + e.getMessage());
@@ -73,7 +73,7 @@ public class Commandes {
             stat= con.prepareStatement(sql);
             stat.setInt(1,id);
             prrdd=stat.executeUpdate();
-            con.close();
+//            con.close();
         }catch (Exception e){
             System.out.println("error: " + e.getMessage());
         }
@@ -94,7 +94,7 @@ public class Commandes {
                 produits.setNom(rst.getString(2));
                produits.setPrix(rst.getInt(3));
                 produits.setDescription(rst.getString(4));
-                produits.setQuantite(String.valueOf(rst.getInt(5)));
+                produits.setQuantite(rst.getInt(5));
             }
 
         }catch (Exception e){

@@ -32,8 +32,11 @@ public class LoginController {
     public void setSubmit() throws IOException{
         Connection con = ConnectionDb.getConnection();
         PreparedStatement stat = null;
+
         ResultSet rs = null;
+
         String sql ="SELECT * FROM admin WHERE login= ? AND motdepasse= ?";
+
         try {
             stat = con.prepareStatement(sql);
             stat.setString(1, LoginField.getText().toString());
@@ -43,7 +46,7 @@ public class LoginController {
                 Stage stage2 = new Stage();
                 FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("home-view.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 650, 450);
-                stage2.setTitle("Hello!");
+                stage2.setTitle("Page d'accueil");
                 stage2.setScene(scene);
                 stage2.show();
                 HomeController.myroot=stage2;
@@ -52,7 +55,7 @@ public class LoginController {
             }else {
                 mdp.setText("Veuillez corriger vos informations");
                 Alert alert;
-                alert = new Alert(Alert.AlertType.ERROR);
+                alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Erreur de connexion");
                 alert.setHeaderText("Erreur");
                 alert.setContentText("Login ou Mot de Passe Incorrect");

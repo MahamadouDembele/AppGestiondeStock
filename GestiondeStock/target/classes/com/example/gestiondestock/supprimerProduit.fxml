@@ -36,7 +36,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="278.0" layoutY="45.0" onAction="#AnnulerSuppr" mnemonicParsing="false" style="-fx-background-color: grey;" text="Annuler" textFill="WHITE">
+            <Button layoutX="278.0" layoutY="45.0" onAction="#AnnulerSuppr" mnemonicParsing="false" style="-fx-background-color: grey;" text="Retour" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
